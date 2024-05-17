@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BoardRepositoryTest" project="Chapter05" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="edu.pnu.BoardRepositoryTest" time="0.49" displayname="BoardRepositoryTest" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.BoardRepositoryTest]">
+    <testcase name="testInsertBoard" classname="edu.pnu.BoardRepositoryTest" time="0.43" displayname="testInsertBoard()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.BoardRepositoryTest]/[method:testInsertBoard()]"/>
+    <testcase name="testGetBoard" classname="edu.pnu.BoardRepositoryTest" time="0.034" displayname="testGetBoard()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.BoardRepositoryTest]/[method:testGetBoard()]"/>
+    <testcase name="testUpdateBoard" classname="edu.pnu.BoardRepositoryTest" time="0.016" displayname="testUpdateBoard()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.BoardRepositoryTest]/[method:testUpdateBoard()]"/>
+    <testcase name="testDeleteBoard" classname="edu.pnu.BoardRepositoryTest" time="0.009" displayname="testDeleteBoard()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.BoardRepositoryTest]/[method:testDeleteBoard()]"/>
+  </testsuite>
+</testrun>

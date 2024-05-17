@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="QueryMethodTest" project="Chapter05" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="edu.pnu.QueryMethodTest" time="0.668" displayname="QueryMethodTest" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryMethodTest]">
+    <testcase name="testFindByTitleContaining" classname="edu.pnu.QueryMethodTest" time="0.668" displayname="testFindByTitleContaining()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryMethodTest]/[method:testFindByTitleContaining()]"/>
+  </testsuite>
+</testrun>

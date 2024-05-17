@@ -1,0 +1,54 @@
+package edu.pnu.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import org.springframework.stereotype.Repository;
+
+import edu.pnu.domain.MemberVO;
+
+@Repository
+public class LogDao {
+	private Connection con;
+	
+	//기본 생성자: DB 연결
+	public LogDao() {
+		try {
+			String url = "jdbc:h2:tcp://localhost/~/.h2/mission3";
+			String id = "sa";
+			String pwd = "abcd";
+			
+			con = DriverManager.getConnection(url, id, pwd);
+			System.out.println("DB 연결 성공");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+/*	public void InsertLog(LogVO logVO) {
+		PreparedStatement psmt = null;
+		
+		try {
+			psmt = con.prepareStatement("INSERT INTO DBLOG(method, sqlstring, success) values(?, ?, ?)");
+			psmt.setString(1, logVO.getMethod());
+			psmt.setString(2, logVO.getSqlstring());
+			psmt.setString(3, logVO.getSuccess());
+			psmt.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(psmt != null) psmt.close();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	*/
+}

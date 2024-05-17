@@ -1,0 +1,15 @@
+package edu.pnu;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import edu.pnu.domain.Board;
+
+@Repository
+public interface BoardReository extends JpaRepository<Board, Long>{
+	@Query("SELECT b FROM Bord b WHERE b.title like %?1% ODER BY b.seq DESC")
+	List<Board> queryAnnotationTest1(String searchKeyword);
+}

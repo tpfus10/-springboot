@@ -1,0 +1,17 @@
+package edu.pnu;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Chapter05Application {
+	//클라이언트를 웹 애플리케이션이 아닌 일반 자바 애플리케이션으로 실행하기 위해 수정
+	public static void main(String[] args) {
+		SpringApplication application =
+				new SpringApplication(Chapter05Application.class);
+		application.setWebApplicationType(WebApplicationType.NONE); //WebApplicationType을 NONE으로 설정->내장 톰캣 구동X
+		application.run(args);
+	}
+
+}

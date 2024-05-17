@@ -1,0 +1,69 @@
+package edu.pnu.dao;
+
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import edu.pnu.domain.LogVO;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Repository
+public class LogDao {
+	
+	private final DataSource dataSource;
+	
+	//기본 생성자: DB 연결
+	public LogDao() {
+		try {
+			String url = "jdbc:h2:tcp://localhost/~/.h2/mission3";
+			String id = "sa";
+			String pwd = "abcd";
+			
+			dataSource = DriverManager.getConnection(url, id, pwd);
+			System.out.println("DB 연결 성공");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	//LogVO를 생성하지 않는 방법
+	public void addLog(String method, String sqlstring, boolean b) {
+		addLog(LogVO.builder()
+					.method(method)
+					.sqlstring(sqlstring)
+					.success(b)
+					.build()
+				);
+	}
+		
+	//LogVO를 생성하는 방법
+	public void addLog(LogVO logVO) {
+		PreparedStatement psmt = null;
+		
+		try {
+			psmt = dataSource.prepareStatement("INSERT INTO DBLOG(method, sqlstring, success) values(?, ?, ?)");
+			psmt.setString(1, logVO.getMethod());
+			psmt.setString(2, logVO.getSqlstring());
+			psmt.setBoolean(3, logVO.isSuccess()); //boolean type의 getter는 is로 만들어줌
+			psmt.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(psmt != null) psmt.close();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}

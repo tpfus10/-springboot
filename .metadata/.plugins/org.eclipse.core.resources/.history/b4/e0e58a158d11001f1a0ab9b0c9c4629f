@@ -1,0 +1,5 @@
+spring.application.name=Mission4
+
+spring.datasource.url = jdbc:h2:tcp://localhost/~/.h2/mission4
+spring.datasource.username = sa
+spring.datasource.password = abcd

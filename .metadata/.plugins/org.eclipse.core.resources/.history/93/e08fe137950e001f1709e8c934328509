@@ -1,0 +1,61 @@
+package edu.pnu.controller;
+
+import java.sql.SQLException;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.pnu.dao.MemberDAO;
+import edu.pnu.domain.MemberVO;
+import edu.pnu.service.MemberService;
+
+//@RestController
+public class MemberController {
+	
+	private MemberService memberservice;
+	
+	public MemberController() throws SQLException {
+		
+		System.out.println("MemberController 생성");
+		
+		memberservice  = new MemberService();
+		memberservice.setMemberDao(new MemberDAO());
+	}
+	
+//	public MemberController() throws SQLException {
+//		memberservice  = new MemberService(new MemberDAO());
+//	}
+	
+	@GetMapping({"/member/{id}", "/member"})
+	public ResponseEntity<?> getMember(@PathVariable(required = false) Integer id) {
+		if (id == null)
+			return ResponseEntity
+				.ok(memberservice.getAllMember());
+		
+		return ResponseEntity
+				.ok(memberservice.getMemberById(id));
+	}
+	
+	@PostMapping("/member")
+	public MemberVO addMemberVO(MemberVO memberVO) {
+		System.out.println(memberservice.addMemberVO(memberVO));
+		return memberservice.addMemberVO(memberVO);
+	}
+	
+	@PutMapping("/member")
+	public int updateMembers(MemberVO memberVO) {
+		return memberservice.updateMembers(memberVO);
+	}
+	
+	@DeleteMapping("/member/{id}") 
+	public int removeMember(@PathVariable Integer id) {
+		if(id == null)
+			return 0;
+		return memberservice.removeMember(id);
+	}
+}
