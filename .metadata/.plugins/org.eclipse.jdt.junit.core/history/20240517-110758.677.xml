@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="QueryMethodTest" project="Chapter05" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="edu.pnu.QueryMethodTest" time="0.96" displayname="QueryMethodTest" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryMethodTest]">
-    <testcase name="testFindByTitleContainingOrContentContaining" classname="edu.pnu.QueryMethodTest" time="0.709" displayname="testFindByTitleContainingOrContentContaining()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryMethodTest]/[method:testFindByTitleContainingOrContentContaining()]"/>
-    <testcase name="testFindByTitle" classname="edu.pnu.QueryMethodTest" time="0.092" displayname="testFindByTitle()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryMethodTest]/[method:testFindByTitle()]"/>
-    <testcase name="testFindByTitleContainingOrderBySeqDesc" classname="edu.pnu.QueryMethodTest" time="0.087" displayname="testFindByTitleContainingOrderBySeqDesc()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryMethodTest]/[method:testFindByTitleContainingOrderBySeqDesc()]"/>
-    <testcase name="testByContentContaining" classname="edu.pnu.QueryMethodTest" time="0.071" displayname="testByContentContaining()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryMethodTest]/[method:testByContentContaining()]"/>
-  </testsuite>
-</testrun>

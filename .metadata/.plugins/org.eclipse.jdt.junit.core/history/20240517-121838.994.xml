@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="QueryAnnotationTest.testQueryAnnotationTest4" project="Chapter05" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="edu.pnu.QueryAnnotationTest" time="0.626" displayname="QueryAnnotationTest" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryAnnotationTest]">
-    <testcase name="testQueryAnnotationTest4" classname="edu.pnu.QueryAnnotationTest" time="0.626" displayname="testQueryAnnotationTest4()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.QueryAnnotationTest]/[method:testQueryAnnotationTest4()]"/>
-  </testsuite>
-</testrun>
